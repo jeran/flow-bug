@@ -1,18 +1,23 @@
 import SwiftUI
-import shared
-
-func greet() -> String {
-    return Greeting().greeting()
-}
 
 struct ContentView: View {
-    var body: some View {
-        Text(greet())
-    }
-}
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    private let cancelScope: () -> ()
+    private let emit: () -> ()
+
+    init(cancelScope: @escaping () -> (), emit: @escaping () -> ()) {
+        self.cancelScope = cancelScope
+        self.emit = emit
+    }
+
+    var body: some View {
+        VStack {
+            Button(action: cancelScope, label: {
+                Text("Cancel Scope")
+            })
+            Button(action: emit, label: {
+                Text("Emit")
+            })
+        }
     }
 }
