@@ -1,0 +1,29 @@
+# Android Studio
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Build output
+/build
+/androidApp/build
+/shared/build
+/iosApp/build
+/buildSrc/build
+
+# Xcode
+iosApp/iosApp.xcodeproj/project.xcworkspace/* 
+iosApp/iosApp.xcodeproj/xcuserdata/*
+
+# Cocoapods
+shared/shared.podspec
