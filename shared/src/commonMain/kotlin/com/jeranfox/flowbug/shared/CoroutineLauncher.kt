@@ -8,25 +8,18 @@ import kotlinx.coroutines.launch
 class CoroutineLauncher(
     private val flow: AbstractUnitFlow,
 ) {
-    private val scope1 = MainScope()
-    private val scope2 = MainScope()
+    private val scope = MainScope()
 
     init {
-        scope1.launch {
+        scope.launch {
             flow.collect {
-                println("Collecting on scope1")
-            }
-        }
-
-        scope2.launch {
-            flow.collect {
-                println("Collecting on scope2")
+                println("Collecting")
             }
         }
     }
 
     fun cancelScope() {
-        println("Canceling scope1")
-        scope1.cancel()
+        println("Canceling scope")
+        scope.cancel()
     }
 }
